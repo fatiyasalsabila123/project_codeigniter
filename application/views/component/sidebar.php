@@ -24,7 +24,7 @@
             </div>
 
             <div class="sidebar1">
-                <a href="#">
+                <a href="dashboard">
                     <span class="material-icons-sharp">
                         dashboard
                     </span>
@@ -34,13 +34,13 @@
                     <span class="material-icons-sharp">
                         person_outline
                     </span>
-                    <h3>Users</h3>
+                    <h3>Siswa</h3>
                 </a>
                 <a href="#">
                     <span class="material-icons-sharp">
-                        receipt_long
+                        person_outline
                     </span>
-                    <h3>History</h3>
+                    <h3>Guru</h3>
                 </a>
                 <a href="#" class="active">
                     <span class="material-icons-sharp">
@@ -54,30 +54,6 @@
                     </span>
                     <h3>Tickets</h3>
                     <span class="message-count">27</span>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        inventory
-                    </span>
-                    <h3>Sale List</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        report_gmailerrorred
-                    </span>
-                    <h3>Reports</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        settings
-                    </span>
-                    <h3>Settings</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        add
-                    </span>
-                    <h3>New Login</h3>
                 </a>
                 <a href="<?php echo base_url('auth/logout');?>">
                     <span class="material-icons-sharp">
