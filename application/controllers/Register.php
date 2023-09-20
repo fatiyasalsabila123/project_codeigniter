@@ -22,13 +22,14 @@ class Register extends CI_Controller {
       $role = $this->input->post('role');
 
       // Validasi password
-      if (strlen($password) < 8) {
-         // Password kurang dari 8 karakter
-         redirect('auth/register'); // Redirect kembali ke halaman registrasi dengan pesan kesalahan
+      if (strlen($password) < 8 || !preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/', $password)) {
+         // Password tidak memenuhi persyaratan
+         $this->session->set_flashdata('error_message', 'Password harus memiliki setidaknya 8 karakter, satu huruf besar, satu huruf kecil, dan satu angka.');
+         redirect('register'); // Redirect kembali ke halaman registrasi
       } else {
          // Hash password menggunakan MD5
          $hashed_password = md5($password);
-
+   
          // Simpan data pengguna ke database
          $data = array(
             'username' => $username,
@@ -36,11 +37,11 @@ class Register extends CI_Controller {
             'email' => $email,
             'role' => $role,
          );
-
+   
          $this->m_model->register($data); // Panggil model untuk menyimpan data
-
+   
          // Redirect ke halaman login atau halaman selamat datang
-         redirect('auth/login'); // Sesuaikan dengan URL halaman login atau halaman selamat datang
+         redirect('auth'); // Sesuaikan dengan URL halaman login atau halaman selamat datang
       }
    }
 }

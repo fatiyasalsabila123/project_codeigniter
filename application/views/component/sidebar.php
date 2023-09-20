@@ -24,38 +24,25 @@
             </div>
 
             <div class="sidebar1">
-                <a href="dashboard">
+                <a href="dashboard" style="text-decoration:none" <?php echo current_url() == base_url('admin/dashboard') ? 'class="active"' : ''; ?>>
                     <span class="material-icons-sharp">
                         dashboard
                     </span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="#">
+                <a href="siswa" style="text-decoration:none" <?php echo current_url() == base_url('admin/siswa') ? 'class="active"' : ''; ?>>
                     <span class="material-icons-sharp">
                         person_outline
                     </span>
                     <h3>Siswa</h3>
                 </a>
-                <a href="#">
+                <a href="guru" style="text-decoration:none" <?php echo current_url() == base_url('admin/guru') ? 'class="active"' : ''; ?>>
                     <span class="material-icons-sharp">
                         person_outline
                     </span>
                     <h3>Guru</h3>
                 </a>
-                <a href="#" class="active">
-                    <span class="material-icons-sharp">
-                        insights
-                    </span>
-                    <h3>Analytics</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        mail_outline
-                    </span>
-                    <h3>Tickets</h3>
-                    <span class="message-count">27</span>
-                </a>
-                <a href="<?php echo base_url('auth/logout');?>">
+                <a style="text-decoration:none" href="<?php echo base_url('auth/logout');?>">
                     <span class="material-icons-sharp">
                         logout
                     </span>

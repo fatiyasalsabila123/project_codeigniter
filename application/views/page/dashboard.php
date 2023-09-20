@@ -85,8 +85,6 @@
                             <th>TTL</th>
                             <th>Kelas</th>
                             <th>Gender</th>
-                            <th>Action</th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -98,10 +96,6 @@
                             <td><?= $row->tempat_lahir. ' ' . $row->tanggal_lahir?></td>
                             <td><?= $row->kelas. ' ' . $row->jurusan?></td>
                             <td><?= $row->gender?></td>
-                            <<td>
-                                <a href="" class="btn btn-sm btn-primary">Edit</a>
-                                <button class="btn btn-sm btn-danger">Hapus</button>
-                            </td> 
                         </tr>
                         <?php endforeach;?>
                     </tbody>
@@ -133,7 +127,6 @@
                             <td><?= $row->nik?></td>
                             <td><?= $row->mapel?></td>
                             <td><?= $row->gender?></td>
-                            <td><a href="page/dashboard">test</a></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -147,7 +140,7 @@
 
         <!-- Right Section -->
         <div class="right-section">
-            <!-- <div class="nav">
+        <div class="nav">
                 <button id="menu-btn">
                     <span class="material-icons-sharp">
                         menu
@@ -172,8 +165,8 @@
                     </div>
                 </div>
 
-            </div> -->
-<?php $this->load->view('component/navbar'); ?>
+            </div>
+<!-- <?php $this->load->view('component/navbar'); ?> -->
             <!-- End of Nav -->
 
             <div class="user-profile">
@@ -245,78 +238,12 @@
 
 
 
-<!-- Modal edit siswa-->
-<!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Siswa</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <?php foreach ($edit_siswa as $row):?>
-      <form method="post" action="<?php echo base_url('admin/aksi_ubah_siswa')?>" enctype="multipart/form-data">
-      <input type="hidden" id="id" name="id" value="<?php echo $row->id; ?>">
-      <div class="modal-body">
-  <div class="mb-3">
-    <label class="form-label">Nama Siswa</label>
-    <input type="text" name="username" class="form-control" value="<?php echo $row->username;?>">
-  </div>
-  <div class="mb-3">
-                        <label class="form-label">Gender</label>
-                        <input type="text" name="gender" class="form-control" value="<?php echo $row->gender;?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">NISN</label>
-                        <input type="number" name="nisn" class="form-control" value="<?php echo $row->nisn;?>">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Kelas</label>
-                        <input type="text" name="kelas" class="form-control" value="<?php echo $row->kelas;?>">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Jurusan</label>
-                        <input type="text" name="jurusan" class="form-control" value="<?php echo $row->jurusan;?>">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Tempat Lahir</label>
-                        <input type="text" name="tempat_lahir" class="form-control" value="<?php echo $row->tempat_lahir;?>">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Tanggal Lahir</label>
-                        <input type="text" name="tanggal_lahir" class="form-control" value="<?php echo $row->tanggal_lahir;?>">
-                    </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div>
-</form>
-<?php endforeach;?>
-      </div>
-    </div>
-  </div> -->
+
 </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="<?php echo base_url('/asset/Vesperr/')?>assets/js/orders.js"></script>
     <script src="<?php echo base_url('/asset/Vesperr/')?>assets/js/index.js"></script>
-    <script>
-    $(document).ready(function() {
-        console.log('Edit button clicked');
-        $('.edit-button').click(function() {
-            var guruId = $(this).data('id');
-            $('#guruId').val(guruId); // Mengisi input hidden dengan ID guru
-        });
-    });
-    $(document).ready(function() {
-        console.log('Edit button clicked');
-        $('.edit-button').click(function() {
-            var siswaId = $(this).data('id');
-            $('#siswaId').val(siswaId); // Mengisi input hidden dengan ID guru
-        });
-    });
-</script>
 </body>
 
 </html>
